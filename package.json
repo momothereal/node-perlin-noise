@@ -1,15 +1,18 @@
 {
-  "name": "perlin-noise",
-  "version": "0.0.1",
-  "description": "simple perlin noise generator",
+  "name": "seeded-perlin-noise",
+  "version": "0.0.2",
+  "description": "simple perlin noise generator, with seeding support",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/superjoe30/node-perlin-noise.git"
+    "url": "https://github.com/momotherel/node-perlin-noise.git"
   },
-  "author": "Andrew Kelley <superjoe30@gmail.com>",
-  "license": "BSD"
+  "author": "momothereal <momothereal.mc@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "seedrandom": "^2.4.3"
+  }
 }

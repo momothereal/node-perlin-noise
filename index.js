@@ -1,5 +1,25 @@
 exports.generatePerlinNoise = generatePerlinNoise;
 exports.generateWhiteNoise = generateWhiteNoise;
+exports.setSeed = setSeed;
+
+const seedrandom = require('seedrandom');
+var _rng = null;
+
+function setSeed(seed) {
+  if (!seed || seed === null) {
+    _rng = null;
+    return;
+  }
+  _rng = seedrandom(seed);
+}
+
+function random() {
+  if (!_rng || _rng === null) {
+    return Math.random();
+  }
+  let rng = _rng();
+  return rng;
+}
 
 function generatePerlinNoise(width, height, options) {
   options = options || {};
@@ -61,7 +81,7 @@ function generatePerlinNoise(width, height, options) {
 function generateWhiteNoise(width, height) {
   var noise = new Array(width * height);
   for (var i = 0; i < noise.length; ++i) {
-    noise[i] = Math.random();
+    noise[i] = random();
   }
   return noise;
 }
